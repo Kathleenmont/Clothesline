@@ -1,13 +1,7 @@
 body {
     background: black;
 }
-.container {
-    /* width: 80%;
-    position: absolute;
-    top: 580px;
-    left: 10%;
-    padding-bottom: 90px; */
-}
+
 .jumbotron {
     background: url(../images/splash_bg.jpg) center no-repeat;
     height: 300px;
@@ -15,14 +9,29 @@ body {
     margin-bottom: 0;
 }
 
+#title {
+	color: white;
+	text-align: center;
+	letter-spacing: 10px;
+	margin-top: 7%;
+	font-family: 'Lora', sans-serif;
+}
+
 .btn-outline-success{
     color: #00e6d0;
     border-color: #00e6d0;
+    border-radius: 50px;
 }
 .btn-outline-success:hover{
     color: black;
     border-color: black;
     background-color: #00e6d0;
+}
+
+.imgshadow{
+    -webkit-box-shadow: 0px 6px 36px -1px rgba(0,230,208,1);
+    -moz-box-shadow: 0px 6px 36px -1px rgba(0,230,208,1);
+    box-shadow: 0px 6px 36px -1px rgba(0,230,208,1);
 }
 
 .learnMore{
