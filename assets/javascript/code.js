@@ -1,15 +1,15 @@
 $(document).ready(function () {
 
-    
-
-
         function displayClothes() {
 
         api_key = "vy2ijcoryhesrk8tkbsf6geh";
-        terms = $('#etsy-terms').val();
+        //terms = $('#etsy-terms').val();
+        terms = $(this).attr("data-clothing");
         etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=" +
             terms + "&limit=12&includes=Images:1&api_key=" + api_key;
-
+        
+        var images = $("<div id='etsy-images'>")
+        
         $('#etsy-images').empty();
         $('<p></p>').text('Searching for ' + terms).appendTo('#etsy-images');
 
@@ -42,7 +42,6 @@ $(document).ready(function () {
         return false;
     }
 
-
-    $(document).on("click", ".gif-btn", displayClothes);
+    $(document).on("click", ".clothing-image", displayClothes);
 });
 
