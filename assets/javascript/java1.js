@@ -125,115 +125,115 @@ function addSnowBoots() {
 // }
 
 function addCoat() {
-    var coat = $("<div>").addClass("clothing-div").attr("id", "coat")
+    var coat = $("<div>").addClass("clothing-div").attr("id", "coat1")
     $("#weather-items-area").append(coat);
     coatText = coat.text("Wear a coat").addClass("clothing-text");
     coatPhoto = $("<img>").attr("src", "assets/images/coat.jpg").attr("data-clothing", "coat");
     coatPhoto.addClass("clothing-image")
-    $("#coat").append(coatText);
-    $("#coat").append(coatPhoto);
+    $("#coat1").append(coatText);
+    $("#coat1").append(coatPhoto);
 }
 
 function addJacket() {
-    var jacket = $("<div>").addClass("clothing-div").attr("id", "jacket")
+    var jacket = $("<div>").addClass("clothing-div").attr("id", "jacket1")
     $("#weather-items-area").append(jacket);
     jacketText = jacket.text("Wear a jacket").addClass("clothing-text");
     jacketPhoto = $("<img>").attr("src", "assets/images/jacket.jpg").attr("data-clothing", "jacket");
     jacketPhoto.addClass("clothing-image")
-    $("#jacket").append(jacketText);
-    $("#jacket").append(jacketPhoto);
+    $("#jacket1").append(jacketText);
+    $("#jacket1").append(jacketPhoto);
 }
 
 function addWindbreaker() {
-    var windbreaker = $("<div>").addClass("clothing-div").attr("id", "windbreaker")
+    var windbreaker = $("<div>").addClass("clothing-div").attr("id", "windbreaker1")
     $("#weather-items-area").append(windbreaker);
     windbreakerText = windbreaker.text("Condider a windbreaker").addClass("clothing-text");
     windbreakerPhoto = $("<img>").attr("src", "assets/images/windbreaker.jpg").attr("data-clothing", "windbreaker");
     windbreakerPhoto.addClass("clothing-image")
-    $("#windbreaker").append(windbreakerText);
-    $("#windbreaker").append(windbreakerPhoto);
+    $("#windbreaker1").append(windbreakerText);
+    $("#windbreaker1").append(windbreakerPhoto);
 }
 
 function addLightJacket() {
-    var lightJacket = $("<div>").addClass("clothing-div").attr("id", "lightJacket")
+    var lightJacket = $("<div>").addClass("clothing-div").attr("id", "lightJacket1")
     $("#weather-items-area").append(lightJacket);
     lightJacketText = lightJacket.text("Take a light jacket or sweater").addClass("clothing-text");
     lightJacketPhoto = $("<img>").attr("src", "assets/images/lightJacket.jpg").attr("data-clothing", "Jacket");
     lightJacketPhoto.addClass("clothing-image")
-    $("#lightJacket").append(lightJacketText);
-    $("#lightJacket").append(lightJacketPhoto);
+    $("#lightJacket1").append(lightJacketText);
+    $("#lightJacket1").append(lightJacketPhoto);
 }
 
 function addSweater() {
-    var sweater = $("<div>").addClass("clothing-div").attr("id", "sweater")
+    var sweater = $("<div>").addClass("clothing-div").attr("id", "sweater1")
     $("#weather-items-area").append(sweater);
     sweaterText = sweater.text("Consider taking a light sweater").addClass("clothing-text");
     sweaterPhoto = $("<img>").attr("src", "assets/images/sweater.jpg").attr("data-clothing", "sweater");
     sweaterPhoto.addClass("clothing-image")
-    $("#sweater").append(sweaterText);
-    $("#sweater").append(sweaterPhoto);
+    $("#sweater1").append(sweaterText);
+    $("#sweater1").append(sweaterPhoto);
 }
 
 function addTshirt() {
-    var tshirt = $("<div>").addClass("clothing-div").attr("id", "tshirt")
+    var tshirt = $("<div>").addClass("clothing-div").attr("id", "tshirt1")
     $("#weather-items-area").append(tshirt);
     tshirtText = tshirt.text("Wear something lite, consider a t-shirt").addClass("clothing-text");
     tshirtPhoto = $("<img>").attr("src", "assets/images/tshirt.jpg").attr("data-clothing", "tshirt");
     tshirtPhoto.addClass("clothing-image")
-    $("#tshirt").append(tshirtText);
-    $("#tshirt").append(tshirtPhoto);
+    $("#tshirt1").append(tshirtText);
+    $("#tshirt1").append(tshirtPhoto);
 }
 
 function addShorts() {
-    var shorts = $("<div>").addClass("clothing-div").attr("id", "shorts")
+    var shorts = $("<div>").addClass("clothing-div").attr("id", "shorts1")
     $("#weather-items-area").append(shorts);
     shortsText = shorts.text("Maybe some shorts").addClass("clothing-text");
     shortsPhoto = $("<img>").attr("src", "assets/images/shorts.jpg").attr("data-clothing", "shorts");
     shortsPhoto.addClass("clothing-image");
-    $("#shorts").append(shortsText);
-    $("#shorts").append(shortsPhoto);
+    $("#shorts1").append(shortsText);
+    $("#shorts1").append(shortsPhoto);
 }
 
 function addSandals() {
-    var sandals = $("<div>").addClass("clothing-div").attr("id", "sandals")
+    var sandals = $("<div>").addClass("clothing-div").attr("id", "sandals1")
     $("#weather-items-area").append(sandals);
     sandalsText = sandals.text("Consider wearing sandals").addClass("clothing-text");
     sandalsPhoto = $("<img>").attr("src", "assets/images/sandals.jpg").attr("data-clothing", "sandals");
     sandalsPhoto.addClass("clothing-image");
-    $("#sandals").append(sandalsText);
-    $("#sandals").append(sandalsPhoto);
+    $("#sandals1").append(sandalsText);
+    $("#sandals1").append(sandalsPhoto);
 }
 
 function addSunglasses() {
-    var sunglasses = $("<div>").addClass("clothing-div").attr("id", "sunglasses")
+    var sunglasses = $("<div>").addClass("clothing-div").attr("id", "sunglasses1")
     $("#weather-items-area").append(sunglasses);
     sunglassesText = sunglasses.text("Bring sunglasses").addClass("clothing-text");
     sunglassesPhoto = $("<img>").attr("src", "assets/images/sunglasses.jpg").attr("data-clothing", "sunglasses");
     sunglassesPhoto.addClass("clothing-image")
-    $("#sunglasses").append(sunglassesText);
-    $("#sunglasses").append(sunglassesPhoto);
+    $("#sunglasses1").append(sunglassesText);
+    $("#sunglasses1").append(sunglassesPhoto);
 }
 
 
 
 function addRainBoots() {
-    var rainBoots = $("<div>").addClass("clothing-div").attr("id", "rainBoots")
+    var rainBoots = $("<div>").addClass("clothing-div").attr("id", "rainBoots1")
     $("#weather-items-area").append(rainBoots);
     rainBootsText = rainBoots.text("Consider wearing rain boots").addClass("clothing-text");
     rainBootsPhoto = $("<img>").attr("src", "assets/images/rainBoots.jpg").attr("data-clothing", "rain-boots");
     rainBootsPhoto.addClass("clothing-image")
-    $("#rainBoots").append(rainBootsText);
-    $("#rainBoots").append(rainBootsPhoto);
+    $("#rainBoots1").append(rainBootsText);
+    $("#rainBoots1").append(rainBootsPhoto);
 }
 
 function addRainJacket() {
-    var rainJacket = $("<div>").addClass("clothing-div").attr("id", "rainJacket")
+    var rainJacket = $("<div>").addClass("clothing-div").attr("id", "rainJacket1")
     $("#weather-items-area").append(rainJacket);
     rainJacketText = rainJacket.text("Think about a rain jacket").addClass("clothing-text");
     rainJacketPhoto = $("<img>").attr("src", "assets/images/rainJacket.jpg").attr("data-clothing", "rain-jacket");
     rainJacketPhoto.addClass("clothing-image")
-    $("#rainJacket").append(rainJacketText);
-    $("#rainJacket").append(rainJacketPhoto);
+    $("#rainJacket1").append(rainJacketText);
+    $("#rainJacket1").append(rainJacketPhoto);
 }
 
 
@@ -256,7 +256,6 @@ function getClothing() {
         dataType: 'json'
     }).then(function (response) {
 
-
         var description = response.data[0].weather.description;
         // log the daily weather discription
         console.log("Today the weather will be  " + description)
@@ -275,7 +274,31 @@ function getClothing() {
         console.log(response)
         // make average temp
         var averageTemp = Math.floor((high + low) / 2);
-        console.log(averageTemp);
+        
+        // current temp
+        var temp = Math.floor(response.data[0].temp);
+        console.log(temp);
+
+        // for weather display
+        $("#description").text( description);
+        $("#high").text("High " + high + " °F");
+        $("#low").text("Low " + low + " °F");
+        $("#pop").text("Chance of percipatiation is %" + pop);
+
+        if ((description.includes("snow")) || (description.includes("Snow"))) {
+            $("#weather-img").attr("src", "assets/images/icons/snow.png");
+        } else if ((description.includes("sun")) || (description.includes("Clear")) || (description.includes("clear")) || (description.includes("Sun"))) {
+            $("#weather-img").attr("src", "assets/images/icons/sun.png");
+        } else if ((description.includes("rain")) || (description.includes("Rain"))) {
+            $("#weather-img").attr("src", "assets/images/icons/rain.png");
+        } else if ((description.includes("thunder")) || (description.includes("Thunder"))) {
+            $("#weather-img").attr("src", "assets/images/icons/thunder.png");
+        } else if ((description.includes("Scattered clouds")) || (description.includes("Few clouds"))) {
+            $("#weather-img").attr("src", "assets/images/icons/partly-cloudy.png");
+        } else if ((description.includes("clouds")) || (description.includes("Clouds")) || (description.includes("cloudy")) || (description.includes("Cloudy"))) {
+            $("#weather-img").attr("src", "assets/images/icons/cloudy.png");
+        }
+
 
         // this functionis here because it uses the pop response in it logic 
         //  so it needs to be in the ajax call function
@@ -297,7 +320,7 @@ function getClothing() {
 
         // logic for weather calls clothing display functions
         if (averageTemp <= 34) {
-            if ((description.includes("snow")) || (description.includes("snow"))) {
+            if ((description.includes("snow")) || (description.includes("Snow"))) {
                 addParka();
                 addHat();
                 addGloves();
