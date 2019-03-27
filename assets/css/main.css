@@ -16,7 +16,7 @@ body {
 
 }
 
-#title {
+.heading {
 	color: white;
 	text-align: center;
 	letter-spacing: 10px;
