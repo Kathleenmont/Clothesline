@@ -10,7 +10,7 @@ body {
 
 }
 
-#title {
+.heading {
 	color: white;
 	text-align: center;
 	letter-spacing: 10px;
@@ -38,6 +38,33 @@ body {
 #title{
     color: white;
 }
+
+.container{
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.image-container{
+    display: inline-block;
+    position: relative;
+    /* margin-right: 20%; */
+    margin-bottom: 5%;
+}
+
+.banner{
+    position: absolute;
+    bottom: 0px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%; 
+    text-align: center;
+    color: white;
+    height: 50px;
+}
+
+    /* #fullOpacity{
+        opacity: 1;
+    } */
 
 .footer{
     height: 50px;

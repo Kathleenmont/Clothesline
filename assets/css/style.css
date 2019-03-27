@@ -1,0 +1,9 @@
+
+
+.clothing-image {
+    width: 250px;
+}
+
+#city {
+    text-transform: capitalize;
+}
