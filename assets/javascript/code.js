@@ -6,7 +6,7 @@ function displayClothes() {
    
     console.log(terms)
     etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords=" + 
-        terms + "&limit=12&includes=Images:1&api_key=" + api_key;
+        terms + "&limit=8&includes=Images:1&api_key=" + api_key;
     
     // $('#etsy-images').empty();
     // $('<p></p>').text('Searching for ' + terms).appendTo('#etsy-images');
@@ -29,9 +29,9 @@ function displayClothes() {
                             "<a href='" + item.url + "'target=_blank></a>"
                         );
                         
-                        if (i % 4 == 3) {
-                            $('<br/>').appendTo(breaksss);
-                        }
+                        //if (i % 4 == 3) {
+                        //    $('<br/>').appendTo(breaksss);
+                        //}
                         });
                     } else {
                         $('<p>No results.</p>').appendTo(breaksss);
