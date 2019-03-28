@@ -1,5 +1,11 @@
+/*    */
 body {
     background: black;
+}
+
+.container{
+    border-radius: 5px;
+    padding: 20px;
 }
 
 .jumbotron {
@@ -7,7 +13,6 @@ body {
     height: 300px;
     background-size: cover;
     margin-bottom: 0px;
-
 }
 
 .heading {
@@ -18,6 +23,7 @@ body {
 	font-family: 'Lora', sans-serif;
 }
 
+/* Top right corner search button  */
 .btn-outline-success{
     color: #00e6d0;
     border-color: #00e6d0;
@@ -29,43 +35,21 @@ body {
     background-color: #00e6d0;
 }
 
-.learnMore{
-    height: 50px;
-    background-color: black;
-    text-align: center;
-}
-
-#title{
-    color: white;
-}
-
-.container{
-    border-radius: 5px;
-    padding: 20px;
-}
-
-.image-container{
-    display: inline-block;
-    position: relative;
-    /* margin-right: 20%; */
-    margin-bottom: 5%;
-}
-
+/* Image banner style */
 .banner{
     position: absolute;
-    bottom: 0px;
+    bottom: -17px;
+    margin-left: -20px;
     z-index: 10;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .7);
     width: 100%; 
     text-align: center;
     color: white;
     height: 50px;
 }
 
-    /* #fullOpacity{
-        opacity: 1;
-    } */
 
+/* Footer style  */
 .footer{
     height: 50px;
     color: white;
@@ -77,3 +61,31 @@ body {
     padding-top: 15px;
     color: #00e6d0;
 }
+
+/* button animation */
+.c--anim-btn span {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+  }
+  
+  .c--anim-btn, .c-anim-btn {
+    transition: 0.3s;     
+  }
+  
+  .c--anim-btn {
+    height: 64px;
+    font: normal normal 700 1em/4em Arial,sans-serif;
+    overflow: hidden;
+    width: 200px;
+    background-color: transparent;
+  }
+  
+  .c-anim-btn{
+    margin-top: 0em;   
+  }
+  
+  .c--anim-btn:hover .c-anim-btn{
+    margin-top: -4em;
+  }
