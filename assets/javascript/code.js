@@ -15,7 +15,7 @@ function displayClothes() {
     
     //var images = $("<div id=" + j + ">");
     //$("#" + terms).append(images);
-    console.log("banana")
+    console.log(terms)
     $('#etsy-images').empty();
     $('<p></p>').text('Searching for '+terms).appendTo('#etsy-images');
 
@@ -28,12 +28,10 @@ function displayClothes() {
                 $('#etsy-images').empty();
                 if (data.count > 0) {
                     $.each(data.results, function(i,item) {
-                        $("<img/>").attr("src", item.Images[0].url_75x75).appendTo("#etsy-images").wrap(
+                        var img = $("<img/>").attr("src", item.Images[0].url_170x135).appendTo("#etsy-images").wrap(
                             "<a href='" + item.url + "'></a>"
+                            
                         );
-                        if (i%4 == 3) {
-                            $('<br/>').appendTo('#etsy-images');
-                        }
                     });
                 } else {
                     $('<p>No results.</p>').appendTo('#etsy-images');

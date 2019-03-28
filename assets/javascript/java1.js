@@ -99,8 +99,13 @@ function addScarf() {
     $(".card-deck").append(scarf);
     var scarfBody = $("<div>").addClass("card-body").attr("id", "scarf-body")
     scarfText = $("<p>").text("Consider a scarf").addClass("clothing-text card-text");
+<<<<<<< HEAD
     scarfPhoto = $("<img>").attr("src", "assets/images/scarf.jpg").attr("data-clothing", "scarf").addClass("card-img-top");
     scarfPhoto.addClass("clothing-image");
+=======
+    scarfPhoto = $("<img>").attr("src", "assets/images/scarf.jpg").attr("data-clothing", "scarf");
+    scarfPhoto.addClass("clothing-image")
+>>>>>>> master
     $("#scarf1").append(scarfPhoto);
     $("#scarf1").append(scarfBody);
     $("#scarf-body").append(scarfText);
@@ -277,7 +282,7 @@ function getClothing() {
         console.log("the low today is " + low + " °F")
         // log the chance of percipatation
         var pop = response.data[0].pop;
-        console.log("the chance of percipatiation is %" + pop)
+        console.log("the chance of percipatiation is" + pop + "%")
         // the wind speed is 
         var windSpeed = response.data[0].wind_spd;
         console.log("The windspeed is " + windSpeed)
@@ -293,7 +298,7 @@ function getClothing() {
         $("#description").text(description);
         $("#high").text("High " + high + " °F");
         $("#low").text("Low " + low + " °F");
-        $("#pop").text("Chance of percipatiation is %" + pop);
+        $("#pop").text("Chance of percipatiation is " + pop + "%");
 
         if ((description.includes("snow")) || (description.includes("Snow"))) {
             $("#weather-img").attr("src", "assets/images/icons/snow.png");

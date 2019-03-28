@@ -19,23 +19,56 @@ body {
 	color: white;
 	text-align: center;
 	letter-spacing: 10px;
-	margin-top: 7%;
+    margin-top: 45px;
 	font-family: 'Lora', sans-serif;
+}
+
+.cloudBlack {
+    background-color: black;
+}
+#weather-img{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 8%;
+    padding-bottom: 2%;
 }
 
 /* Top right corner search button  */
 .btn-outline-success{
-    color: #00e6d0;
-    border-color: #00e6d0;
+    color: #ffffff;
+    border-color: black;
     border-radius: 50px;
 }
-.btn-outline-success:hover{
-    color: black;
-    border-color: black;
-    background-color: #00e6d0;
+
+
+.btn-outline-success:active{
+    background-color: #000000;
 }
 
+.card{
+    background-color: black;
+    text-align: center;
+    padding:0px;
+    color: white;
+
+}
+
+.btn-outline-success:hover{
+    color: rgb(0, 174, 255);
+    border-color: rgb(0, 0, 0);
+    background-color: #000000;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 9999;
+  }
 /* Image banner style */
+
 .banner{
     position: absolute;
     bottom: -17px;
@@ -48,18 +81,22 @@ body {
     height: 50px;
 }
 
-
 /* Footer style  */
 .footer{
-    height: 50px;
+    width: 100%;
+    /* height: 80px;
     color: white;
-    text-align: center;
-    margin-top: 50px;
+    text-align: center; */
+    /* margin-top: 100px;
+    background-color: rgb(20, 20, 20); */
 }
 
 .footer p{
-    padding-top: 15px;
-    color: #00e6d0;
+    margin-bottom: 0px;
+    color: #ffffff;
+    background-color: rgb(7, 7, 7);
+    box-shadow: 0px -2px 8px #35353580;
+    height: 64px;
 }
 
 /* button animation */
