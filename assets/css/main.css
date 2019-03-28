@@ -50,7 +50,16 @@ body {
     text-align: center;
     padding:0px;
     color: white;
+    
+}
 
+.clothing-div {
+    max-width: 350px;
+}
+
+#outside-img {
+    width: 550px;
+   
 }
 
 .btn-outline-success:hover{
