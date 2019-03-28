@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CLOTHESLINE</title>
+    <link rel="icon" href="c.png">
+    <title>Clothesline</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
@@ -18,13 +19,13 @@
 
 <body class="align-center mx-auto">
     <!-- top row for logo & search area -->
-    <nav class="navbar navbar-light bg-black" style="background-color:black;">
+    <nav class="navbar navbar-light bg-black" style="background-color:black; position: sticky;">
         <a class="navbar-brand" href="#">
             <img src="./assets/images/clothesline.png" alt="logo">
         </a>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" id="search" placeholder="City" aria-label="Search">
-            <select class="btn btn-danger" id="state">
+            <select class="btn mr-3 ml-1" id="state" style="height: 38px; background-color: white; color: black;">
                 <option value="">State</option>
                 <option value="AL">AL</option>
                 <option value="AK">AK</option>
@@ -85,26 +86,21 @@
         </form>
     </nav>
     <!-- Banner -->
-    <div class="jumbotron imgshadow">
+    <div class="jumbotron">
 
         <!-- Banner Sub-Title -->
         <h1 class="heading" id="city" class="mx-auto text-center">
             <i class="fas fa-map-marker-alt"></i> </h1>
     </div>
 
-    </br>
-    </br>
-    <div class="container">
-        <div class="heading title text-center mt-2 mb-5">
-            <h1 id="title">What To Wear</h1>
-        </div>
+    </br></br>
 
-        <!-- 1st row for weather box and weather text for today's weather-->
+    <div class="container">
+
         <div class="row">
-            <div class="col-md-6">
-                <div class="card bg-black">
-                    <img class="card-img-top bg-dark" id="weather-img" src="assets/images/dailyweather.jpeg" alt="Card image cap"
-                        style="height: 250px;">
+            <div class="col-md-6 text-center">
+                <div class="card text-white" style="background-color: black; border-color: white;">
+                    <img class="card-img-top cloudBlack" id="weather-img" src="assets/images/dailyweather.jpeg" alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text">Today's Weather</p>
                         <p class="card-text" id="description"></p>
@@ -112,13 +108,19 @@
                         <p class="card-text" id="low"></p>
                         <p class="card-text" id="pop"></p>
                         <p class="card-text" id="description"></p>
-
                     </div>
                 </div>
             </div>
+
+                <div class="col-md-6 text-center">
+                    <div class="card text-white" style="background-color: black;">
+                        <img class="card-img-top" id="outside-img" src="assets/images/snowy-cover.jpg" alt="Card image cap">
+                    </div>
+                </div>
+
         </div>
 
-        </br> </br>
+        </br></br>
 
         <div class="row">
             <h3 style="color:white;">Clothing recommendations</h3>
@@ -140,8 +142,8 @@
 
 
     <!-- footer -->
-    <div class="footer bg-dark">
-        <p>Copyright</p>
+    <div class="footer text-center m-0">
+        <p class="pt-3">Copyright</p>
     </div>
 
 

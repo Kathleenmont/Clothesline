@@ -15,7 +15,7 @@ function displayClothes() {
     
     //var images = $("<div id=" + j + ">");
     //$("#" + terms).append(images);
-    console.log("banana")
+    console.log(terms)
     $('#etsy-images').empty();
     $('<p></p>').text('Searching for '+terms).appendTo('#etsy-images');
 
