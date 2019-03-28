@@ -33,7 +33,7 @@ database.ref().on("value", function (snapshot) {
     stateDisplay = snapshot.val().currentState;
     state = "," + snapshot.val().currentState;
     console.log(cityName)
-    $("#weather-items-area").html("");
+    $("#card-deck").html("");
     getClothing()
 
     console.log(stateDisplay)
@@ -98,9 +98,9 @@ function addScarf() {
     var scarf = $("<div>").addClass("clothing-div card").attr("id", "scarf1")
     $(".card-deck").append(scarf);
     var scarfBody = $("<div>").addClass("card-body").attr("id", "scarf-body")
-    scarfText = $("<p>").text("Consider a scarf").addClass("clothing-text card-text").attr("data-clothing", "scarf").addClass("card-img-top");
-    scarfPhoto = $("<img>").attr("src", "assets/images/scarf.jpg");
-    scarfPhoto.addClass("clothing-image")
+    scarfText = $("<p>").text("Consider a scarf").addClass("clothing-text card-text");
+    scarfPhoto = $("<img>").attr("src", "assets/images/scarf.jpg").attr("data-clothing", "scarf").addClass("card-img-top");
+    scarfPhoto.addClass("clothing-image");
     $("#scarf1").append(scarfPhoto);
     $("#scarf1").append(scarfBody);
     $("#scarf-body").append(scarfText);
