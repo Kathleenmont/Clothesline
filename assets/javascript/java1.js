@@ -371,16 +371,16 @@ function getClothing() {
                     addParka("#card-row-1");
                     addHat("#card-row-1");
                     addGloves("#card-row-1");
-                    addSocks("#card-row-2");
-                    addScarf("#card-row-2");
-                    addSnowBoots("#card-row-2");
+                    addSocks("card-row-1");
+                    addScarf("card-row-1");
+                    addSnowBoots("card-row-1");
 
                 } else {
                     addParka("#card-row-1");
                     addHat("#card-row-1");
                     addGloves("#card-row-1");
-                    addSocks("#card-row-2");
-                    addScarf("#card-row-2");
+                    addSocks("card-row-1");
+                    addScarf("card-row-1");
                 }
             } else if ((averageTemp > 34) && (averageTemp < 50)) {
                 addCoat("#card-row-1");
@@ -405,20 +405,20 @@ function getClothing() {
 
             if (averageTemp >= 70) {
                 if ((description.includes("sun")) || (description.includes("Clear")) || (description.includes("clear")) || (description.includes("Sun"))) {
-                    addSunglasses("#card-row-2")
+                    addSunglasses("#card-row-1")
                 }
             }
 
             if (averageTemp >= 35) {
                 if ((pop >= 20) && (pop < 40)) {
-                    umbrella("#card-row-2")
+                    umbrella("#card-row-1")
                 }
             }
             if (averageTemp >= 35) {
                 if (pop >= 40) {
-                    umbrella("#card-row-2")
-                    addRainBoots("#card-row-2");
-                    addRainJacket("#card-row-2");
+                    umbrella("#card-row-1")
+                    addRainBoots("card-row-1");
+                    addRainJacket("card-row-1");
                 }
             }
         }
