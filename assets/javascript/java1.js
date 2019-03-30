@@ -5,6 +5,7 @@ var cityName = $("#search").val().trim();
 var state = "," + $("#state").val();
 var stateDisplay = $("#state").val();
 
+console.log(cityName)
 
 // getting input for us check
 var usa = $("#usa").is(':checked');
