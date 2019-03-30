@@ -16,7 +16,7 @@ if (usa === false) {
 
 // firebase config
 var config = {
-    apiKey: "AIzaSyCQgsLkFwDX6FAc5MmJz9t-9Ac1Rf-YzxY",
+    apiKey: "3331bbb2e05e476187e7ed6f57d9ef9e",
     authDomain: "clothesline-c81a5.firebaseapp.com",
     databaseURL: "https://clothesline-c81a5.firebaseio.com",
     projectId: "clothesline-c81a5",
