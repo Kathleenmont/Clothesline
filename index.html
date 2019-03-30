@@ -18,6 +18,7 @@
 </head>
 
 <body class="align-center mx-auto">
+
     <!-- top row for logo & search area -->
     <nav class="navbar navbar-light bg-black" style="background-color:black; position: sticky;">
         <a class="navbar-brand" href="#">
@@ -80,7 +81,7 @@
                 <option value="WY">WY</option>
             </select>
 
-            <button class="btn btn-outline-success my-2 my-sm-0" id="submit-button" type="submit"> <i class="fas fa-search-location"></i></button>
+            <button class="btn btn-outline my-2 my-sm-0" id="submit-button" type="submit"> <i class="fas fa-search-location"></i></button>
 
 
         </form>
@@ -90,7 +91,7 @@
 
         <!-- Banner Sub-Title -->
         <h1 class="heading" id="city" class="mx-auto text-center">
-            <i class="fas fa-map-marker-alt"></i>To get started enter city search </h1>
+            <i class="fas fa-map-marker-alt"></i></h1>
     </div>
 
     </br></br>
@@ -102,18 +103,20 @@
                 <div class="card text-white" style="background-color: black; border-color: white;">
                     <img class="card-img-top cloudBlack" id="weather-img" src="assets/images/dailyweather.jpeg" alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text">Today's Weather</p>
                         <p class="card-text" id="current-temp"></p>
                         <p class="card-text" id="description"></p>
-                        <p class="card-text" id="high"></p>
-                        <p class="card-text" id="low"></p>
+                        <p class="card-text">
+                            <span id="high" class="temp"></span>
+                            <span id="low" class="temp"></span>
+                        </p>
+                        <!-- <p class="card-text" id="low"></p> -->
                         <p class="card-text" id="pop"></p>
 
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 text-center">
+            <div class="col-md-6 d-sm-none d-md-block text-center">
                 <div class="card text-white" style="background-color: black;">
                     <img class="card-img-top" id="outside-img" src="assets/images/blank-black.jpg" alt="Card image cap">
                 </div>
@@ -124,22 +127,14 @@
         </br></br>
 
         <div class="row">
-            <h3 style="color:white;">Clothing recommendations</h3>
+            <h3 style="color:white;">Clothing </h3>
         </div>
         <div class="row">
             <div class="card-deck" id="card-row-1">
             </div>
         </div>
-        <div class="row">
-            <div class="card-deck" id="card-row-2">
-            </div>
-        </div>
 
-        <!-- <div class="row" id="etsy">
-            <h3 style="color:white;">Etsy Results</h3>
-            <div id="etsy-images">
-            </div>
-        </div> -->
+
 
         <div class="container text-center my-3" id="etsyResults">
                 <h3 style="color:white; text-align: left; padding-bottom: 25px;">Etsy Results</h3>
@@ -147,22 +142,13 @@
                     <div class="carousel-inner w-100" role="listbox">
                         <div class="carousel-item row no-gutters active" id="img1">
                             
-                            <!-- <div class="col-3 float-left"><img class="img-fluid" src="http://placehold.it/350x280/222/fff?text=1"></div>
-                            <div class="col-3 float-left"><img class="img-fluid" src="http://placehold.it/350x280/444?text=2"></div>
-                            <div class="col-3 float-left"><img class="img-fluid" src="http://placehold.it/350x280/888?text=3"></div>
-                            <div class="col-3 float-left"><img class="img-fluid" src="http://placehold.it/350x280/111/fff?text=4"></div> -->
+                           
                         </div>
                         <div class="carousel-item row no-gutters" id="img2">
-                            <!-- <div class="col-3 float-left"><img class="img-fluid" src="http://placehold.it/350x280?text=5"></div>
-                            <div class="col-3 float-left"><img class="img-fluid" src="http://placehold.it/350x280/555?text=6"></div>
-                            <div class="col-3 float-left"><img class="img-fluid" src="http://placehold.it/350x280/333/fff?text=7"></div>
-                            <div class="col-3 float-left"><img class="img-fluid" src="http://placehold.it/350x280/bbb?text=8"></div> -->
+                          
                         </div>
                         <div class="carousel-item row no-gutters" id="img3">
-                                <!-- <div class="col-3 float-left"><img class="img-fluid" src="http://placehold.it/350x280?text=5"></div>
-                                <div class="col-3 float-left"><img class="img-fluid" src="http://placehold.it/350x280/555?text=6"></div>
-                                <div class="col-3 float-left"><img class="img-fluid" src="http://placehold.it/350x280/333/fff?text=7"></div>
-                                <div class="col-3 float-left"><img class="img-fluid" src="http://placehold.it/350x280/bbb?text=8"></div> -->
+                               
                             </div>
 
                     </div>
@@ -177,9 +163,6 @@
                 </div>
             
             </div>
-
-
-
 
     </div>
 
