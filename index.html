@@ -18,6 +18,7 @@
 </head>
 
 <body class="align-center mx-auto">
+
     <!-- top row for logo & search area -->
     <nav class="navbar navbar-light bg-black" style="background-color:black; position: sticky;">
         <a class="navbar-brand" href="#">
@@ -80,7 +81,7 @@
                 <option value="WY">WY</option>
             </select>
 
-            <button class="btn btn-outline-success my-2 my-sm-0" id="submit-button" type="submit"> <i class="fas fa-search-location"></i></button>
+            <button class="btn btn-outline my-2 my-sm-0" id="submit-button" type="submit"> <i class="fas fa-search-location"></i></button>
 
 
         </form>
@@ -102,18 +103,20 @@
                 <div class="card text-white" style="background-color: black; border-color: white;">
                     <img class="card-img-top cloudBlack" id="weather-img" src="assets/images/dailyweather.jpeg" alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text">Today's Weather</p>
                         <p class="card-text" id="current-temp"></p>
                         <p class="card-text" id="description"></p>
-                        <p class="card-text" id="high"></p>
-                        <p class="card-text" id="low"></p>
+                        <p class="card-text">
+                            <span id="high" class="temp"></span>
+                            <span id="low" class="temp"></span>
+                        </p>
+                        <!-- <p class="card-text" id="low"></p> -->
                         <p class="card-text" id="pop"></p>
 
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 text-center">
+            <div class="col-md-6 d-sm-none d-md-block text-center">
                 <div class="card text-white" style="background-color: black;">
                     <img class="card-img-top" id="outside-img" src="assets/images/blank-black.jpg" alt="Card image cap">
                 </div>
@@ -135,10 +138,7 @@
             </div>
         </div>
 
-        <div class="row">
-            <div id="etsy-images">
-            </div>
-        </div>
+       
 
 
 
