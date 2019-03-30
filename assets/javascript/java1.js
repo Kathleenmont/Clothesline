@@ -7,12 +7,9 @@ var stateDisplay = $("#state").val();
 
 
 // getting input for us check
-var usa = $("#usa").is(':checked');
-if (usa === false) {
-    usa = "";
-} else {
-    usa = "us";
-}
+
+
+
 
 // firebase config
 var config = {
@@ -33,6 +30,9 @@ database.ref().on("value", function (snapshot) {
     cityName = snapshot.val().currentCity;
     stateDisplay = snapshot.val().currentState;
     state = "," + snapshot.val().currentState;
+    if (state !== ",") {
+        state = "," + snapshot.val().currentState + "&country=us";
+    }
     console.log(cityName)
     $("#card-deck").html("");
     getClothing()
@@ -53,17 +53,17 @@ database.ref().on("value", function (snapshot) {
 
 
 // functions to for clothing text and images
-function addParka(rowPlace) {
-    var parka = $("<div>").addClass("clothing-div card").attr("id", "parka1")
-    $(rowPlace).append(parka);
-    var parkaBody = $("<div>").addClass("card-body").attr("id", "parka-body");
-    parkaText = $("<p>").text("Wear a parka").addClass("clothing-text card-text");
-    parkaPhoto = $("<img>").attr("src", "assets/images/parka.jpeg").attr("data-clothing", "parka").addClass("card-img-top");
-    parkaPhoto.addClass("clothing-image")
-    $("#parka1").append(parkaPhoto);
-    $("#parka1").append(parkaBody);
-    $("#parka-body").append(parkaText);
-}
+// function addParka(rowPlace) {
+//     var parka = $("<div>").addClass("clothing-div card").attr("id", "parka1")
+//     $(rowPlace).append(parka);
+//     var parkaBody = $("<div>").addClass("card-body").attr("id", "parka-body");
+//     parkaText = $("<p>").text("Wear a parka").addClass("clothing-text card-text");
+//     parkaPhoto = $("<img>").attr("src", "assets/images/parka.jpeg").attr("data-clothing", "parka").addClass("card-img-top");
+//     parkaPhoto.addClass("clothing-image")
+//     $("#parka1").append(parkaPhoto);
+//     $("#parka1").append(parkaBody);
+//     $("#parka-body").append(parkaText);
+// }
 
 
 function addHat(rowPlace) {
@@ -226,6 +226,18 @@ function addSandals(rowPlace) {
     $("#sandals-body").append(sandalsText);
 }
 
+function addItem( id, clothing, dataClothing, photo, saying) {
+    var item = $("<div>").addClass("clothing-div card").attr("id", id)
+    $(rowPlace).append(item);
+    var itemBody = $("<div>").addClass("card-body").attr("id", clothing + "-body");
+    itemText = $("<p>").text(saying).addClass("clothing-text card-text");
+    itemPhoto = $("<img>").attr("src", photo).attr("data-clothing", dataClothing).addClass("card-img-top");
+    itemPhoto.addClass("clothing-image");
+    $(`#${id}`).append(itemPhoto);
+    $(`#${id}`).append(itemBody);
+    $(`#${clothing}-body`).append(itemText);
+}
+
 function addSunglasses(rowPlace) {
     var sunglasses = $("<div>").addClass("clothing-div card").attr("id", "sunglasses1")
     $(rowPlace).append(sunglasses);
@@ -275,18 +287,19 @@ function getClothing() {
     $("#card-deck").html("");
     $("#etsy-images").html("");
 
-
+    
+     console.log(stateDisplay)
     var weatherBitAPIKey = "71e5a03df5d44319b7d4b3afd11c27a3";
-    var weatherBitqueryURL = "https://api.weatherbit.io/v2.0/forecast/daily?city=" + cityName + state + "&country=" + usa + "&units=I&key=" + weatherBitAPIKey;
-
+    var weatherBitqueryURL = "https://api.weatherbit.io/v2.0/forecast/daily?city=" + cityName + state + "&units=I&key=" + weatherBitAPIKey;
+    
+   
 
     $.ajax({
         url: weatherBitqueryURL,
         method: "GET",
         dataType: 'json'
     }).then(function (response) {
-        console.log(response)
-        console.log(weatherBitqueryURL)
+      console.log(weatherBitqueryURL)
         
         if (response === undefined ) {
             // message if no data exsists for search word
@@ -294,6 +307,7 @@ function getClothing() {
             $("#city").append("City not found - try search again");
 
         } else {
+            
 
             var description = response.data[0].weather.description;
             // log the daily weather discription
@@ -368,12 +382,14 @@ function getClothing() {
             // logic for weather calls clothing display functions
             if (averageTemp <= 34) {
                 if ((description.includes("snow")) || (description.includes("Snow"))) {
-                    addParka("#card-row-1");
-                    addHat("#card-row-1");
-                    addGloves("#card-row-1");
-                    addSocks("#card-row-2");
-                    addScarf("#card-row-2");
-                    addSnowBoots("#card-row-2");
+                    // addParka("#card-row-1");
+                    // id, clothing,  dataClothing, photo, saying
+                    addItem("parka1", "parka", "parka", "assets/images/parka.jpeg", "Wear a parka");
+                    // addHat("#card-row-1");
+                    // addGloves("#card-row-1");
+                    // addSocks("#card-row-2");
+                    // addScarf("#card-row-2");
+                    // addSnowBoots("#card-row-2");
 
                 } else {
                     addParka("#card-row-1");
@@ -381,6 +397,7 @@ function getClothing() {
                     addGloves("#card-row-1");
                     addSocks("#card-row-2");
                     addScarf("#card-row-2");
+                    addItem('#card-row-1', 'sandals', 'bring sandals')
                 }
             } else if ((averageTemp > 34) && (averageTemp < 50)) {
                 addCoat("#card-row-1");
@@ -438,7 +455,8 @@ $("#submit-button").on("click", function (event) {
     cityName = $("#search").val().trim();
     state = "," + $("#state").val();
     stateDisplay = $("#state").val();
-
+    
+    
     var displayCity = {
         currentCity: cityName,
         currentState: stateDisplay
@@ -447,8 +465,6 @@ $("#submit-button").on("click", function (event) {
     database.ref().set(displayCity);
 
 
-    console.log(displayCity.currentState)
-    console.log(displayCity.cityName)
     $(".card-deck").clear();
     getClothing();
 
