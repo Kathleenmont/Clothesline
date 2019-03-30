@@ -120,6 +120,7 @@ body {
 }
 
 
+
 /* small devices */
 
 @media (max-width: 651px) {
@@ -137,4 +138,5 @@ body {
         margin-left: 50px !important;
     }
 }
+
 
