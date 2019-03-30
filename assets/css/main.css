@@ -34,23 +34,32 @@ body {
 }
 
 /* Top right corner search button  */
-.btn-outline-success{
+.btn-outline{
     color: #ffffff;
     border-color: black;
     border-radius: 50px;
 }
 
 
-.btn-outline-success:active{
+.btn-outline:active{
     background-color: #000000;
+}
+
+.btn-outline:hover{
+    color: rgb(0, 174, 255);
+    border-color: rgb(0, 0, 0);
+    background-color: #000000;
+}
+
+.btn:focus{
+    box-shadow: none;
 }
 
 .card{
     background-color: black;
     text-align: center;
     padding:0px;
-    color: white;
-    
+    color: white;    
 }
 
 .clothing-div {
@@ -60,12 +69,6 @@ body {
 #outside-img {
     width: 550px;
    
-}
-
-.btn-outline-success:hover{
-    color: rgb(0, 174, 255);
-    border-color: rgb(0, 0, 0);
-    background-color: #000000;
 }
 
 .navbar {
@@ -90,6 +93,14 @@ body {
     height: 50px;
 }
 
+.temp{
+    padding: 0 20px;
+}
+
+.temp:first-child{
+    border-right: 1px solid white;
+}
+
 /* Footer style  */
 .footer{
     width: 100%;
@@ -108,35 +119,24 @@ body {
     height: 64px;
 }
 
-/* button animation */
-.c--anim-btn span {
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    display: block;
-  }
-  
-  .c--anim-btn, .c-anim-btn {
-    transition: 0.3s;     
-  }
-  
-  .c--anim-btn {
-    height: 64px;
-    font: normal normal 700 1em/4em Arial,sans-serif;
-    overflow: hidden;
-    width: 200px;
-    background-color: transparent;
-  }
-  
-  .c-anim-btn{
-    margin-top: 0em;   
-  }
-  
-  .c--anim-btn:hover .c-anim-btn{
-    margin-top: -4em;
-  }
 
-  .clothing-image{
-      width: 33%;
-      height:
-  }
+
+/* small devices */
+
+@media (max-width: 651px) {
+    .navbar{
+        padding-left: 30%;
+    }
+
+    .form-inline{
+        margin-left: -25px;
+    }
+}
+
+@media (max-width: 575px) {
+    #id{
+        margin-left: 50px !important;
+    }
+}
+
+
