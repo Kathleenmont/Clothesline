@@ -28,7 +28,7 @@ database.ref().on("value", function (snapshot) {
     if (state !== ",") {
         state = "," + snapshot.val().currentState + "&country=us";
     }
-    
+
     $("#card-deck").html("");
     getClothing()
 
@@ -47,9 +47,9 @@ database.ref().on("value", function (snapshot) {
 
 
 // master function to use in logic area
-function addItem( id, clothing, dataClothing, photo, saying) {
+function addItem(rowPlace, id, clothing, dataClothing, photo, saying) {
     var item = $("<div>").addClass("clothing-div card").attr("id", id)
-    $("#card-row-1").append(item);
+    $(rowPlace).append(item);
     var itemBody = $("<div>").addClass("card-body").attr("id", clothing + "-body");
     itemText = $("<p>").text(saying).addClass("clothing-text card-text");
     itemPhoto = $("<img>").attr("src", photo).attr("data-clothing", dataClothing).addClass("card-img-top");
@@ -67,28 +67,28 @@ function getClothing() {
     $("#search").val("");
     $("#state").val("");
     $("#card-deck").html("");
-    $("#etsy-images").html("");
+    $('#etsy-images').empty();
 
-    
-     
+
+
     var weatherBitAPIKey = "71e5a03df5d44319b7d4b3afd11c27a3";
     var weatherBitqueryURL = "https://api.weatherbit.io/v2.0/forecast/daily?city=" + cityName + state + "&units=I&key=" + weatherBitAPIKey;
-    
-   
+
+
 
     $.ajax({
         url: weatherBitqueryURL,
         method: "GET",
         dataType: 'json'
     }).then(function (response) {
-        
-        if (response === undefined ) {
+
+        if (response === undefined) {
             // message if no data exsists for search word
             $("#city").html("");
             $("#city").append("City not found - try search again");
 
         } else {
-            
+
             //  weather discription
             var description = response.data[0].weather.description;
             //  the temp high
@@ -107,7 +107,7 @@ function getClothing() {
             var averageTemp = Math.floor((highApprox + lowApprox) / 2);
             // current temp
             var temp = Math.floor(response.data[0].temp);
-           
+
 
             // for weather display
             $("#current-temp").text("Current Temp " + temp + " °F");
@@ -160,48 +160,48 @@ function getClothing() {
             // logic for weather calls clothing display functions
             if (averageTemp <= 34) {
                 if ((description.includes("snow")) || (description.includes("Snow"))) {
-                   
-                    addItem("parka1", "parka", "parka-coat", "assets/images/parka.jpeg", "Wear a parka");
-                    addItem("hat1", "hat", "beanie-warm", "assets/images/hat.jpg", "Bring a hat");
-                    addItem("gloves1", "gloves", "warm-gloves", "assets/images/gloves.jpg", "Take gloves");
-                    addItem("socks1", "socks", "wool-socks-adults", "assets/images/socks.jpg", "Wear warm socks" );
-                    addItem("scarf1", "scarf", "warm-scarf", "assets/images/scarf.jpg", "Consider a scarf");
-                    addItem("snow-boots1", "snowBoots", "snow-boots-winter", "assets/images/snowBoots.jpg", "Don't forget snow boots")
-                    
+
+                    addItem("#card-row-1", "parka1", "parka", "parka-coat", "assets/images/parka.jpeg", "Wear a parka");
+                    addItem("#card-row-1", "hat1", "hat", "beanie-warm", "assets/images/hat.jpg", "Bring a hat");
+                    addItem("#card-row-1", "gloves1", "gloves", "warm-gloves", "assets/images/gloves.jpg", "Take gloves");
+                    addItem("#card-row-2", "socks1", "socks", "wool-socks-adults", "assets/images/socks.jpg", "Wear warm socks");
+                    addItem("#card-row-2", "scarf1", "scarf", "warm-scarf", "assets/images/scarf.jpg", "Consider a scarf");
+                    addItem("#card-row-2", "snow-boots1", "snowBoots", "snow-boots-winter", "assets/images/snowBoots.jpg", "Don't forget snow boots")
+
 
                 } else {
-                    addItem("parka1", "parka", "parka", "assets/images/parka.jpeg", "Wear a parka");
-                    addItem("hat1", "hat", "warm-gloves", "assets/images/hat.jpg", "Bring a hat");
-                    addItem("gloves1", "gloves", "warm-gloves", "assets/images/gloves.jpg", "Take gloves");
-                    addItem("socks1", "socks", "wool-socks", "assets/images/socks.jpg", "Wear warm socks" );
-                    addItem("scarf1", "scarf", "warm-scarf", "assets/images/scarf.jpg", "Consider a scarf");
+                    addItem("#card-row-1", "parka1", "parka", "parka", "assets/images/parka.jpeg", "Wear a parka");
+                    addItem("#card-row-1", "hat1", "hat", "warm-gloves", "assets/images/hat.jpg", "Bring a hat");
+                    addItem("#card-row-1", "gloves1", "gloves", "warm-gloves", "assets/images/gloves.jpg", "Take gloves");
+                    addItem("#card-row-2", "socks1", "socks", "wool-socks", "assets/images/socks.jpg", "Wear warm socks");
+                    addItem("#card-row-2", "scarf1", "scarf", "warm-scarf", "assets/images/scarf.jpg", "Consider a scarf");
                 }
 
             } else if ((averageTemp > 34) && (averageTemp < 50)) {
-                addItem("coat1", "coat", "coat-winter-warm", "assets/images/coat.jpg", "Wear a coat");
-                addItem("hat1", "hat", "warm-gloves", "assets/images/hat.jpg", "Bring a hat");
-                addItem("scarf1", "scarf", "warm-scarf", "assets/images/scarf.jpg", "Consider a scarf");
-        
+                addItem("#card-row-1", "coat1", "coat", "coat-winter-warm", "assets/images/coat.jpg", "Wear a coat");
+                addItem("#card-row-1", "hat1", "hat", "warm-gloves", "assets/images/hat.jpg", "Bring a hat");
+                addItem("#card-row-1", "scarf1", "scarf", "warm-scarf", "assets/images/scarf.jpg", "Consider a scarf");
+
             } else if ((averageTemp >= 50) && (averageTemp <= 60)) {
                 if (windSpeed >= 14) {
-                    addItem("jacket1", "jacket", "jacket-vintage-clothing", "assets/images/jacket.jpg", "Wear a jacket");
-                    addItem("windbreaker1", "windbreaker", "windbreaker-jacket", "assets/images/windbreaker.jpg", "Consider a windbreaker" );
+                    addItem("#card-row-1", "jacket1", "jacket", "jacket-vintage-clothing", "assets/images/jacket.jpg", "Wear a jacket");
+                    addItem("#card-row-1", "windbreaker1", "windbreaker", "windbreaker-jacket", "assets/images/windbreaker.jpg", "Consider a windbreaker");
                 } else {
-                    addItem("jacket1", "jacket", "jacket-vintage-clothing", "assets/images/jacket.jpg", "Wear a jacket");
+                    addItem("#card-row-1", "jacket1", "jacket", "jacket-vintage-clothing", "assets/images/jacket.jpg", "Wear a jacket");
                 }
             } else if ((averageTemp >= 61) && (averageTemp < 70)) {
-                addItem( "lightJacket1", "lightJacket", "jacket-vintage", "assets/images/lightJacket.jpg", "Take a light jacket or sweater")
+                addItem("#card-row-1", "lightJacket1", "lightJacket", "jacket-vintage", "assets/images/lightJacket.jpg", "Take a light jacket or sweater")
             } else if ((averageTemp >= 70) && (averageTemp <= 75)) {
-                addItem("sweater1", "sweater", "sweater-vintage", "assets/images/sweater.jpg", "Consider taking a light sweater")
+                addItem("#card-row-1", "sweater1", "sweater", "sweater-vintage", "assets/images/sweater.jpg", "Consider taking a light sweater")
             } else if (averageTemp >= 76) {
-                addItem("tshirt1", "tshirt", "t-shirt-vintage-clothing", "assets/images/tshirt.jpg", "Wear something lite, consider a t-shirt" )
-                addItem("shorts1", "shorts", "shorts-vintage-clothing", "assets/images/shorts.jpg", "Maybe some shorts")
-                addItem("sandals1", "sandals", "sandals-shoes", "assets/images/sandals.jpg", "Consider wearing sandals")
+                addItem("#card-row-1", "tshirt1", "tshirt", "t-shirt-vintage-clothing", "assets/images/tshirt.jpg", "Wear something lite, consider a t-shirt")
+                addItem("#card-row-1", "shorts1", "shorts", "shorts-vintage-clothing", "assets/images/shorts.jpg", "Maybe some shorts")
+                addItem("#card-row-1", "sandals1", "sandals", "sandals-shoes", "assets/images/sandals.jpg", "Consider wearing sandals")
             }
 
             if (averageTemp >= 70) {
                 if ((description.includes("sun")) || (description.includes("Clear")) || (description.includes("clear")) || (description.includes("Sun"))) {
-                    addItem("sunglasses1", "sunglasses", "sunglasses-vintage", "assets/images/sunglasses.jpg", "Bring sunglasses")
+                    addItem("#card-row-2", "sunglasses1", "sunglasses", "sunglasses-vintage", "assets/images/sunglasses.jpg", "Bring sunglasses")
                 }
             }
 
@@ -233,8 +233,8 @@ $("#submit-button").on("click", function (event) {
     cityName = $("#search").val().trim();
     state = "," + $("#state").val();
     stateDisplay = $("#state").val();
-    
-    
+
+
     var displayCity = {
         currentCity: cityName,
         currentState: stateDisplay
@@ -244,7 +244,11 @@ $("#submit-button").on("click", function (event) {
 
     // clear previous search results again to prevent repeats
     $(".card-deck").clear();
-   
+
+    // $('#img1').empty();
+    // $('#img2').empty();
+    // $('#img3').empty();
+
     getClothing();
 
 });
