@@ -67,11 +67,17 @@ function getClothing() {
     $("#search").val("");
     $("#state").val("");
     $("#card-deck").html("");
-    $('#etsy-images').empty();
+    $("#etsyResults").hide();
+    $('#img1').html("");
+    $('#img2').html("");
+    $('#img3').html("");
 
 
+// zach's key
+    var weatherBitAPIKey = "3331bbb2e05e476187e7ed6f57d9ef9e";
 
-    var weatherBitAPIKey = "71e5a03df5d44319b7d4b3afd11c27a3";
+    // kathleen's key
+    // var weatherBitAPIKey = "71e5a03df5d44319b7d4b3afd11c27a3"
     var weatherBitqueryURL = "https://api.weatherbit.io/v2.0/forecast/daily?city=" + cityName + state + "&units=I&key=" + weatherBitAPIKey;
 
 
@@ -245,9 +251,7 @@ $("#submit-button").on("click", function (event) {
     // clear previous search results again to prevent repeats
     $(".card-deck").clear();
 
-    // $('#img1').empty();
-    // $('#img2').empty();
-    // $('#img3').empty();
+    
 
     getClothing();
 
