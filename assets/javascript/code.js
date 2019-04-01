@@ -1,6 +1,9 @@
+
+$('#etsyResults').hide();
+
 function displayClothes() {
     
-   
+    $('#etsyResults').show();
 
     api_key = "vy2ijcoryhesrk8tkbsf6geh";
     //terms = $('#etsy-terms').val();
@@ -25,14 +28,38 @@ function displayClothes() {
         success: function (data) {
             console.log(data)
             if (data.ok) {
-                $('#etsy-images').empty();
+                $('#img1').empty();
+                $('#img2').empty();
+                $('#img3').empty();
                 if (data.count > 0) {
                     $.each(data.results, function(i,item) {
-                        var img = $("<img/>").attr("src", item.Images[0].url_170x135).appendTo("#etsy-images").wrap(
-                            "<a href='" + item.url + "'></a>"
-                            
-                        );
-                    });
+                        
+                        var aTag = $("<a target='_blank' href='" + item.url + "'>")
+                        
+                        var img = $("<img style= 'height:100%; width: 100%; max-height: 300px; max-width: 300px; object-fit:cover; padding-left: 9px; overflow: hide;' />").attr("src", item.Images[0].
+                        url_fullxfull);
+
+                        aTag.append(img)
+                        console.log(aTag)    
+                        // $("<div class=col-3 float-left id='imgDiv'></div>");
+                       var abc =  $("<div>").addClass("col-3 float-left p-0").attr("id", "imgDiv");
+                        abc.append(aTag)
+                        
+
+                        //var z = $("imgDiv").append(img)
+                        console.log(abc)
+                        $("#img1").append(abc)
+
+                        if (i >= 4 ) {
+                            $('#img2').append(abc);
+                        }
+                        if (i >= 8 ) {
+                            $('#img3').append(abc);
+                        }
+
+                        });
+                        
+
                 } else {
                     $('<p>No results.</p>').appendTo('#etsy-images');
                 }

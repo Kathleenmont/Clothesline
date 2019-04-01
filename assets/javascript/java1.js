@@ -5,6 +5,7 @@ var cityName = $("#search").val().trim();
 var state = "," + $("#state").val();
 var stateDisplay = $("#state").val();
 
+console.log(cityName)
 
 // firebase config
 var config = {
