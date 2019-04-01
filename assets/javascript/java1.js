@@ -170,6 +170,7 @@ function getClothing() {
                     addItem("#card-row-1", "parka1", "parka", "parka-coat", "assets/images/parka.jpeg", "Wear a parka");
                     addItem("#card-row-1", "hat1", "hat", "beanie-warm", "assets/images/hat.jpg", "Bring a hat");
                     addItem("#card-row-1", "gloves1", "gloves", "warm-gloves", "assets/images/gloves.jpg", "Take gloves");
+                    $("#card-row-2").append("<h4 class='clearfix col-md-12'style=' clear: both; color:white';>Add-Ons<br></h4>");
                     addItem("#card-row-2", "socks1", "socks", "wool-socks-adults", "assets/images/socks.jpg", "Wear warm socks");
                     addItem("#card-row-2", "scarf1", "scarf", "warm-scarf", "assets/images/scarf.jpg", "Consider a scarf");
                     addItem("#card-row-2", "snow-boots1", "snowBoots", "snow-boots-winter", "assets/images/snowBoots.jpg", "Don't forget snow boots")
@@ -179,6 +180,7 @@ function getClothing() {
                     addItem("#card-row-1", "parka1", "parka", "parka", "assets/images/parka.jpeg", "Wear a parka");
                     addItem("#card-row-1", "hat1", "hat", "warm-gloves", "assets/images/hat.jpg", "Bring a hat");
                     addItem("#card-row-1", "gloves1", "gloves", "warm-gloves", "assets/images/gloves.jpg", "Take gloves");
+                    $("#card-row-2").append("<h4 class='clearfix col-md-12'style=' clear: both; color:white';>Add-Ons<br></h4>");
                     addItem("#card-row-2", "socks1", "socks", "wool-socks", "assets/images/socks.jpg", "Wear warm socks");
                     addItem("#card-row-2", "scarf1", "scarf", "warm-scarf", "assets/images/scarf.jpg", "Consider a scarf");
                 }
@@ -207,17 +209,20 @@ function getClothing() {
 
             if (averageTemp >= 70) {
                 if ((description.includes("sun")) || (description.includes("Clear")) || (description.includes("clear")) || (description.includes("Sun"))) {
+                    $("#card-row-2").append("<h4 class='clearfix col-md-12'style=' clear: both; color:white';>Add-Ons<br></h4>");
                     addItem("#card-row-2", "sunglasses1", "sunglasses", "sunglasses-vintage", "assets/images/sunglasses.jpg", "Bring sunglasses")
                 }
             }
 
             if (averageTemp >= 35) {
                 if ((pop >= 20) && (pop < 40)) {
+                    $("#card-row-2").append("<h4 class='clearfix col-md-12'style=' clear: both; color:white';>Add-Ons<br></h4>");
                     umbrella("#card-row-2")
                 }
             }
             if (averageTemp >= 35) {
                 if (pop >= 40) {
+                    $("#card-row-2").append("<h4 class='clearfix col-md-12'style=' clear: both; color:white';>Add-Ons<br></h4>");
                     umbrella("#card-row-2")
                     addItem("#card-row-2", "rainBoot1", "rainBoots", "rain-boots-rubber", "assets/images/rainBoots.jpg", "Consider wearing rain boots")
                     addItem("#card-row-2", "rainJacket1", "rainJacket", "rain-jacket", "assets/images/rainJacket.jpg", "Think about a rain jacket");
