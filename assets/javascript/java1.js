@@ -219,8 +219,8 @@ function getClothing() {
             if (averageTemp >= 35) {
                 if (pop >= 40) {
                     umbrella("#card-row-2")
-                    addItem("rainBoot1", "rainBoots", "rain-boots-rubber", "assets/images/rainBoots.jpg", "Consider wearing rain boots")
-                    addItem("rainJacket1", "rainJacket", "rain-jacket", "assets/images/rainJacket.jpg", "Think about a rain jacket");
+                    addItem("#card-row-2", "rainBoot1", "rainBoots", "rain-boots-rubber", "assets/images/rainBoots.jpg", "Consider wearing rain boots")
+                    addItem("#card-row-2", "rainJacket1", "rainJacket", "rain-jacket", "assets/images/rainJacket.jpg", "Think about a rain jacket");
                 }
             }
         }
