@@ -27,10 +27,10 @@ body {
     background-color: black;
 }
 #weather-img{
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-top: 8%;
-    padding-bottom: 2%;
+    width: 35%;
+    position: relative;
+    left: 32.1%;
+    padding-top:18px;
 }
 
 /* Top right corner search button  */
@@ -67,8 +67,7 @@ body {
 }
 
 #outside-img {
-    width: 550px;
-   
+padding-top: 0px
 }
 
 .navbar {
@@ -131,6 +130,9 @@ body {
     .form-inline{
         margin-left: -25px;
     }
+    #outside-img {
+        padding-top: 20px
+        }
 }
 
 @media (max-width: 575px) {
