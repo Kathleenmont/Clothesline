@@ -161,12 +161,12 @@ function getClothing() {
             if (averageTemp <= 34) {
                 if ((description.includes("snow")) || (description.includes("Snow"))) {
                    
-                    addItem("parka1", "parka", "parka", "assets/images/parka.jpeg", "Wear a parka");
-                    addItem("hat1", "hat", "warm-gloves", "assets/images/hat.jpg", "Bring a hat");
+                    addItem("parka1", "parka", "parka-coat", "assets/images/parka.jpeg", "Wear a parka");
+                    addItem("hat1", "hat", "beanie-warm", "assets/images/hat.jpg", "Bring a hat");
                     addItem("gloves1", "gloves", "warm-gloves", "assets/images/gloves.jpg", "Take gloves");
-                    addItem("socks1", "socks", "wool-socks", "assets/images/socks.jpg", "Wear warm socks" );
+                    addItem("socks1", "socks", "wool-socks-adults", "assets/images/socks.jpg", "Wear warm socks" );
                     addItem("scarf1", "scarf", "warm-scarf", "assets/images/scarf.jpg", "Consider a scarf");
-                    addItem("snow-boots1", "snowBoots", "snow-boots", "assets/images/snowBoots.jpg", "Don't forget snow boots")
+                    addItem("snow-boots1", "snowBoots", "snow-boots-winter", "assets/images/snowBoots.jpg", "Don't forget snow boots")
                     
 
                 } else {
@@ -207,12 +207,12 @@ function getClothing() {
 
             if (averageTemp >= 35) {
                 if ((pop >= 20) && (pop < 40)) {
-                    umbrella("#card-row-1")
+                    umbrella("#card-row-2")
                 }
             }
             if (averageTemp >= 35) {
                 if (pop >= 40) {
-                    umbrella("#card-row-1")
+                    umbrella("#card-row-2")
                     addItem("rainBoot1", "rainBoots", "rain-boots-rubber", "assets/images/rainBoots.jpg", "Consider wearing rain boots")
                     addItem("rainJacket1", "rainJacket", "rain-jacket", "assets/images/rainJacket.jpg", "Think about a rain jacket");
                 }
@@ -244,6 +244,7 @@ $("#submit-button").on("click", function (event) {
 
     // clear previous search results again to prevent repeats
     $(".card-deck").clear();
+   
     getClothing();
 
 });
