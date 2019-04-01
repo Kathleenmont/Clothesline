@@ -6,11 +6,6 @@ var state = "," + $("#state").val();
 var stateDisplay = $("#state").val();
 
 
-// getting input for us check
-
-
-
-
 // firebase config
 var config = {
     apiKey: "3331bbb2e05e476187e7ed6f57d9ef9e",
@@ -24,7 +19,6 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-
 //  firebase keeps the last searched location up and gets weather and clothes info
 database.ref().on("value", function (snapshot) {
     cityName = snapshot.val().currentCity;
@@ -33,12 +27,11 @@ database.ref().on("value", function (snapshot) {
     if (state !== ",") {
         state = "," + snapshot.val().currentState + "&country=us";
     }
-    console.log(cityName)
+    
     $("#card-deck").html("");
     getClothing()
 
     // prints city and state names onto jumbotron
-    console.log(stateDisplay)
     $("#city").html("");
     var location = $('<i class="fas fa-map-marker-alt"></i>');
     $("#city").append(location);
@@ -52,9 +45,7 @@ database.ref().on("value", function (snapshot) {
 });
 
 
-
-
-
+// master function to use in logic area
 function addItem( id, clothing, dataClothing, photo, saying) {
     var item = $("<div>").addClass("clothing-div card").attr("id", id)
     $("#card-row-1").append(item);
@@ -68,10 +59,6 @@ function addItem( id, clothing, dataClothing, photo, saying) {
 }
 
 
-
-
-
-
 // function that makes weather API call 
 // and has clothing weather logic
 function getClothing() {
@@ -82,7 +69,7 @@ function getClothing() {
     $("#etsy-images").html("");
 
     
-     console.log(stateDisplay)
+     
     var weatherBitAPIKey = "71e5a03df5d44319b7d4b3afd11c27a3";
     var weatherBitqueryURL = "https://api.weatherbit.io/v2.0/forecast/daily?city=" + cityName + state + "&units=I&key=" + weatherBitAPIKey;
     
@@ -93,7 +80,6 @@ function getClothing() {
         method: "GET",
         dataType: 'json'
     }).then(function (response) {
-      console.log(weatherBitqueryURL)
         
         if (response === undefined ) {
             // message if no data exsists for search word
@@ -102,28 +88,25 @@ function getClothing() {
 
         } else {
             
-
+            //  weather discription
             var description = response.data[0].weather.description;
-            // log the daily weather discription
-            console.log("Today the weather will be  " + description)
-            // log the temp high
+            //  the temp high
             var high = response.data[0].max_temp;
-            console.log("the high today is " + high + " °F")
-            // log  the temp  low
+            //   the temp  low
             var low = response.data[0].min_temp;
-            console.log("the low today is " + low + " °F")
-            // log the chance of percipatation
+            // chance of percipatation
             var pop = response.data[0].pop;
-            console.log("the chance of percipatiation is" + pop + "%")
+            // the temp feel high
+            var highApprox = response.data[0].app_max_temp;
+            // the temp feel low
+            var lowApprox = response.data[0].app_min_temp;
             // the wind speed is 
             var windSpeed = response.data[0].wind_spd;
-            console.log("The windspeed is " + windSpeed)
-            console.log(response)
-            // make average temp
-            var averageTemp = Math.floor((high + low) / 2);
+            // make average temp feel for the day
+            var averageTemp = Math.floor((highApprox + lowApprox) / 2);
             // current temp
             var temp = Math.floor(response.data[0].temp);
-            console.log(temp);
+           
 
             // for weather display
             $("#current-temp").text("Current Temp " + temp + " °F");
@@ -155,7 +138,7 @@ function getClothing() {
 
 
             // this functionis here because it uses the pop response in it logic 
-            //  so it needs to be in the ajax call function
+            //  so it is in the ajax call function
             function umbrella(rowPlace) {
                 var umbrellaText = "";
                 var umbrella = $("<div>").addClass("clothing-div card").attr("id", "umbrella1")
@@ -177,7 +160,6 @@ function getClothing() {
             if (averageTemp <= 34) {
                 if ((description.includes("snow")) || (description.includes("Snow"))) {
                    
-                    // id, clothing,  dataClothing, photo, saying
                     addItem("parka1", "parka", "parka", "assets/images/parka.jpeg", "Wear a parka");
                     addItem("hat1", "hat", "warm-gloves", "assets/images/hat.jpg", "Bring a hat");
                     addItem("gloves1", "gloves", "warm-gloves", "assets/images/gloves.jpg", "Take gloves");
@@ -240,7 +222,6 @@ function getClothing() {
 
 }
 
-
 // click event for location search
 $("#submit-button").on("click", function (event) {
     event.preventDefault();
@@ -260,7 +241,7 @@ $("#submit-button").on("click", function (event) {
 
     database.ref().set(displayCity);
 
-
+    // clear previous search results again to prevent repeats
     $(".card-deck").clear();
     getClothing();
 
