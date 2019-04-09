@@ -123,22 +123,22 @@ function getClothing() {
             $("#pop").text("Chance of percipatiation is " + pop + "%");
 
             // logic to change weather display icon and weather photo dispay
-            if ((description.includes("snow")) || (description.includes("Snow"))) {
+            if (description.toLowerCase().includes("snow"))  {
                 $("#weather-img").attr("src", "assets/images/icons/snow.png");
                 $("#outside-img").attr("src", "assets/images/snowy-cover.jpg");
-            } else if ((description.includes("sun")) || (description.includes("Clear")) || (description.includes("clear")) || (description.includes("Sun"))) {
+            } else if ((description.toLowerCase().includes("sun")) || (description.toLowerCase().includes("clear"))) {
                 $("#weather-img").attr("src", "assets/images/icons/sun.png");
                 $("#outside-img").attr("src", "assets/images/sunny-day.jpg");
-            } else if ((description.includes("rain")) || (description.includes("Rain"))) {
+            } else if (description.toLowerCase().includes("rain")) {
                 $("#weather-img").attr("src", "assets/images/icons/rain.png");
                 $("#outside-img").attr("src", "assets/images/rainyday.jpg");
-            } else if ((description.includes("thunder")) || (description.includes("Thunder"))) {
+            } else if (description.toLowerCase().includes("thunder")) {
                 $("#weather-img").attr("src", "assets/images/icons/thunder.png");
                 $("#outside-img").attr("src", "assets/images/stormy-day.jpg");
-            } else if ((description.includes("Scattered clouds")) || (description.includes("Few clouds"))) {
+            } else if ((description.toLowerCase().includes("scattered clouds")) || (description.toLowerCase().includes("Few clouds"))) {
                 $("#weather-img").attr("src", "assets/images/icons/partly-cloudy.png");
                 $("#outside-img").attr("src", "assets/images/partly-cloudy-day.jpg");
-            } else if ((description.includes("clouds")) || (description.includes("Clouds")) || (description.includes("cloudy")) || (description.includes("Cloudy"))) {
+            } else if ((description.toLowerCase().includes("clouds"))  || (description.toLowerCase().includes("cloudy"))) {
                 $("#weather-img").attr("src", "assets/images/icons/cloudy.png");
                 $("#outside-img").attr("src", "assets/images/cloudy-day.jpg");
             }
