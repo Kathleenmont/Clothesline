@@ -6,6 +6,6 @@ This app uses the WeatherBit API as well as The Etsy API.
 
 The idea behind it was create something where you can take a quick glance and know what you need to wear to dress weather appropriately that day. 
 
-Deployed project [here](https://esingokgoz.github.io/Project1/) . 
+Deployed project [here](hhttps://esingokgoz.github.io/Clothesline/) . 
 
 
