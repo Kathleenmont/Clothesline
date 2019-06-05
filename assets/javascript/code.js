@@ -5,7 +5,10 @@ function displayClothes() {
     
     $('#etsyResults').show();
 
-    api_key = "vy2ijcoryhesrk8tkbsf6geh";
+   
+    api_key = config.YELP_API_KEY;
+  
+
     //terms = $('#etsy-terms').val();
     terms = $(this).attr("data-clothing");
    
