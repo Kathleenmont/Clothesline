@@ -15,5 +15,10 @@ This app uses the WeatherBit API as well as The Etsy API. It is built using Java
 ## DEPLOYED
 
 Deployed project [here](https://esingokgoz.github.io/Clothesline/). 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 9e5d8ecaeb4302ab233af447619cd569004e1354
 
 
