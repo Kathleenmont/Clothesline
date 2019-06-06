@@ -73,7 +73,7 @@ function getClothing() {
     $('#img3').html("");
 
 
-// zach's key
+    // zach's key
     var weatherBitAPIKey = "3331bbb2e05e476187e7ed6f57d9ef9e";
 
     // kathleen's key
@@ -255,9 +255,7 @@ $("#submit-button").on("click", function (event) {
 
     // clear previous search results again to prevent repeats
     $(".card-deck").clear();
-
     
-
     getClothing();
 
 });
