@@ -6,7 +6,7 @@ The idea behind it was create something where you can take a quick glance and kn
 
 ## GETTING STARTED
 
-Enter the city and state you want weather descriptions and clothing recommendations for. Hit search and see what the weather forecast is as well as appropriate clothing options. Click the clothing picture to query the Etsy API and see browse buyable clothing options. Click the clothing option you like to go to the Etsy page to buy item. 
+Enter the city and state you want weather descriptions and clothing recommendations for. Hit search and see what the weather forecast is as well as appropriate clothing options. Click the clothing picture to query the Etsy API and see browse buyable clothing options. Click the clothing option you like to go to the Etsy page to buy an item. 
 
 ## BUIT WITH
 
@@ -15,10 +15,5 @@ This app uses the WeatherBit API as well as The Etsy API. It is built using Java
 ## DEPLOYED
 
 Deployed project [here](https://esingokgoz.github.io/Clothesline/). 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 9e5d8ecaeb4302ab233af447619cd569004e1354
 
 
