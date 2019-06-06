@@ -9,7 +9,7 @@ console.log(cityName)
 
 // firebase config
 var config = {
-    apiKey: config.WEATHER_BIT_API_KEY,
+    apiKey: "3331bbb2e05e476187e7ed6f57d9ef9e",
     authDomain: "clothesline-c81a5.firebaseapp.com",
     databaseURL: "https://clothesline-c81a5.firebaseio.com",
     projectId: "clothesline-c81a5",
@@ -74,12 +74,12 @@ function getClothing() {
 
 
 // zach's key
-    // var weatherBitAPIKey = "3331bbb2e05e476187e7ed6f57d9ef9e";
-
-    var weatherBitAPIKey = config.WEATHER_BIT_API_KEY;
-
+weatherBitAPIKey = "3331bbb2e05e476187e7ed6f57d9ef9e"
     // kathleen's key
     // var weatherBitAPIKey = "71e5a03df5d44319b7d4b3afd11c27a3"
+    
+   
+   
     var weatherBitqueryURL = "https://api.weatherbit.io/v2.0/forecast/daily?city=" + cityName + state + "&units=I&key=" + weatherBitAPIKey;
 
 

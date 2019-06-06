@@ -6,7 +6,9 @@ function displayClothes() {
     $('#etsyResults').show();
 
    
-    api_key = config.YELP_API_KEY;
+    api_key = "bf9ozfq9t6ema7mdurr2t0or",
+    // other key
+    // api_key = "vy2ijcoryhesrk8tkbsf6geh",
   
 
     //terms = $('#etsy-terms').val();
